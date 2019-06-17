@@ -20,6 +20,9 @@ This is a python application that runs in the background on your server. There a
  - Stop loss (market or limit)
  - Trailing stop loss (market or limit)
  
+#### Screenshot
+![Screen](/static/screen.png?raw=true)
+ 
 
  
  
