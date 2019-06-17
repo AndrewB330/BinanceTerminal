@@ -5,7 +5,7 @@ import requests
 from bson import json_util, ObjectId
 from flask import Flask, render_template, jsonify, request
 
-from order import Order, createLimitOrder
+from order import Order, create_limit
 from utils import *
 
 # FLAKS
@@ -108,7 +108,7 @@ def limit_order():
     if side != Side.SELL and side != Side.BUY:
         return jsonify({"message": "failed"})
 
-    order = createLimitOrder(symbol, side, price, quantity)
+    order = create_limit(symbol, side, price, quantity)
     order_db.insert_one(order.to_json())
     return jsonify({"message": "ok"})
 

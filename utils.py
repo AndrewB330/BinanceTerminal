@@ -19,7 +19,7 @@ QUOTE_GROUPS = {
 }
 
 
-def get_pair(symbol: str):
+def get_pair(symbol: str)->tuple:
     """
     Returns pair with base and quote currency
 
@@ -30,7 +30,7 @@ def get_pair(symbol: str):
     return symbol[:-3], symbol[-3:]
 
 
-def get_pair_dict(symbol: str):
+def get_pair_dict(symbol: str)->dict:
     """
     Returns dictionary with base and quote currency
 
@@ -39,7 +39,7 @@ def get_pair_dict(symbol: str):
     return {"base": get_base_currency(symbol), "quote": get_quote_currency(symbol)}
 
 
-def get_base_currency(symbol: str):
+def get_base_currency(symbol: str)->str:
     """
     Returns base currency of pair
 
@@ -48,7 +48,7 @@ def get_base_currency(symbol: str):
     return get_pair(symbol)[0]
 
 
-def get_quote_currency(symbol):
+def get_quote_currency(symbol)->str:
     """
     Returns quote currency of pair
 
@@ -70,7 +70,7 @@ class Side:
     SELL = 'SELL'
 
 
-def get_precision_by_symbol_dict():
+def get_precision_by_symbol_dict()->dict:
     """
     Returns dictionary: key - symbol, value - object that contains information
     about allowed step size, precision of price and quantity
@@ -97,7 +97,7 @@ def get_precision_by_symbol_dict():
     return res
 
 
-def get_tickers_by_quote_dict():
+def get_tickers_by_quote_dict()->dict:
     """
     Returns dictionary: key - some currency, value - list of binance tickers with key as a quote currency
 
@@ -115,7 +115,7 @@ def get_tickers_by_quote_dict():
     return tickers
 
 
-def get_current_time():
+def get_current_time()->int:
     """
     Returns current timestamp in milliseconds
     """

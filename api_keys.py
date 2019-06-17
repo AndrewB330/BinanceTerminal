@@ -17,11 +17,11 @@ secret = api_key_json['secret']
 public = api_key_json['public']
 
 
-def get_public():
+def get_public()->str:
     return public
 
 
-def get_secret():
+def get_secret()->str:
     return secret
 
 
