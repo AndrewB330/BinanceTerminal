@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Orders</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: sans-serif;
+        }
+        td {
+            border: 1px solid #505050;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <td>Id</td>
+        <td>Time</td>
+        <td>Symbol</td>
+        <td>Side</td>
+        <td>Status</td>
+        <td>Description</td>
+        <td>Price</td>
+        <td>Quantity</td>
+        <td>Place trigger</td>
+        <td>Reset trigger</td>
+        <td>Cancel trigger</td>
+        <td>last update</td>
+    </tr>
+    {% for order in orders %}
+    <tr>
+        <td>{{ to_short(order['_id']) }}</td>
+        <td>{{ to_time(order['time']//1000) }}</td>
+        <td><b>{{ order['symbol'] }}</b></td>
+        <td>{{ order['side'] }}</td>
+        <td>{{ order['status'] }}</td>
+        <td>{{ order['order_description'] }}</td>
+        <td>{{ order['price'] }}</td>
+        <td>{{ order['quantity'] }}</td>
+        <td>{{ order['place_trigger'] }}</td>
+        <td>{{ order['reset_trigger'] }}</td>
+        <td>{{ order['cancel_trigger'] }}</td>
+        <td>{{ to_time(order['last_update']//1000) }}</td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>

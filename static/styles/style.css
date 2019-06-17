@@ -1,0 +1,656 @@
+body {
+    background-color: #FFFFFF;
+    color: #202020;
+    font-family: Arial, serif;
+    font-size: 12px;
+    padding-bottom: 50px;
+    display: flex;
+}
+
+#head {
+    background-color: #2b2b2b;
+    height: 60px;
+    padding: 8px;
+    box-sizing: border-box;
+    color: white;
+}
+
+.head-cell {
+    height: 100%;
+    box-sizing: border-box;
+    display: block;
+    float: left;
+}
+
+a.head-cell {
+    font-size: 24px;
+    line-height: 44px;
+}
+
+.head-cell.right {
+    float: right;
+    margin-left: 16px;
+}
+
+.head-cell > img {
+    height: 100%;
+}
+
+#content {
+    margin: auto;
+    width: 100%;
+}
+
+.bot-nav {
+    height: 32px;
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.bot-button {
+    margin: 3px;
+    padding: 4px;
+    float: left;
+    display: block;
+    box-sizing: border-box;
+    border: 1px solid #444444;
+    color: #afafaf;
+}
+
+.bot-button:hover {
+    border: 1px solid #636363;
+    cursor: pointer;
+    color: #e6e6e6;
+}
+
+.bot-button.enabled {
+    border: 1px solid #37702c;
+    color: #46c345;
+}
+
+.bot-button.disabled {
+    border: 1px solid rgb(234, 0, 112);
+    color: rgb(174, 0, 87);
+}
+
+.bot-button.add {
+    border: 1px solid #70672b;
+    color: #d3ca54;
+}
+
+.depth {
+    width: 100px;
+}
+
+.column {
+    float: left;
+    padding: 4px;
+    box-sizing: border-box;
+}
+
+.column.c20 {
+    width: 20%;
+}
+
+.column.c60 {
+    width: 60%;
+}
+
+.column.c100 {
+    width: 100%;
+}
+
+.depth {
+    width: 100%;
+    font-size: 12px;
+    height: 400px;
+    float: left;
+    overflow-y: hidden;
+}
+
+ul.depth > li {
+    line-height: 16px;
+    position: relative;
+    display: block;
+    margin: 0;
+    height: 16px;
+}
+
+ul.depth > li.bid > a, .change.green {
+    color: rgb(112, 168, 0);
+}
+
+ul.depth > li.ask > a, .change.red {
+    color: rgb(234, 0, 112);
+}
+
+ul.depth > li > a.price {
+    float: left;
+}
+
+ul.depth > li > a.amount {
+    text-align: right;
+    float: right;
+    width: 30%;
+}
+
+ul.depth > li > a.total {
+    text-align: right;
+    float: right;
+    width: 30%;
+}
+
+ul.depth > li > div.filler {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 16px;
+    opacity: 0.2;
+    z-index: -1;
+    border: 1px solid white;
+    box-sizing: border-box;
+}
+
+ul.depth > li.bid > div.filler {
+    background-color: rgb(112, 168, 0);
+}
+
+ul.depth > li.ask > div.filler {
+    background-color: rgb(234, 0, 112);
+}
+
+.row {
+    position: relative;
+    width: 100%;
+    display: inline-block;
+    margin-bottom: 2px;
+}
+
+.red {
+    color: #EA0070;
+}
+
+.green {
+    color: #46c345;
+}
+
+.yellow {
+    color: rgb(240, 185, 11);
+}
+
+.container {
+    display: block;
+    border: 1px solid rgb(230, 230, 230);
+    position: relative;
+    z-index: 100;
+}
+
+a.total, a.amount {
+    color: rgb(51, 51, 51) !important;
+}
+
+a.total:hover, a.amount:hover, a.price:hover {
+    font-weight: bold !important;
+    cursor: pointer;
+}
+
+.center {
+    color: black;
+    padding: 3px;
+    border-bottom: 1px solid #DDDDDD;
+    border-top: 1px solid #DDDDDD;
+}
+
+#chart {
+    min-height: 400px;
+}
+
+.interval-nav {
+    position: absolute;
+    left: 5px;
+    right: 5px;
+}
+
+.interval-btn {
+    font-size: 12px;
+    margin: 0 4px 0 0;
+    float: left;
+    padding: 3px 5px;
+    background-color: #DDDDDD;
+    color: #202020;
+}
+
+.control-btn {
+    font-size: 12px;
+    margin: 0 0 4px 0;
+    float: right;
+    padding: 3px 5px;
+    background-color: #DDDDDD;
+    color: #202020;
+}
+
+.quote-group-selector {
+    background-color: #F7F7F7;
+    display: flex;
+}
+
+.quote-group {
+    background-color: #FFFFFF;
+    flex: 1;
+    float: left;
+    text-align: center;
+    padding: 2px;
+    margin: 1px 5px;
+    border: 1px solid #DDDDDD;
+}
+
+.quote-group.active {
+    color: rgb(240, 185, 11);
+    border: 1px solid rgb(240, 185, 11);
+}
+
+.interval-btn:hover, .control-btn:hover, .quote-group:hover {
+    cursor: pointer;
+}
+
+.currency {
+    float: left;
+    width: 40%;
+}
+
+.cur_price {
+    float: right;
+}
+
+.change {
+    float: right;
+    width: 25%;
+    text-align: right;
+}
+
+.row {
+    padding: 1px 0;
+}
+
+.row.pair:hover {
+    background-color: #e8e8e8;
+    cursor: pointer;
+}
+
+.currency.head, .change.head, .cur_price.head {
+    font-weight: bold;
+}
+
+.currency.head:hover, .change.head:hover, .cur_price.head:hover {
+    cursor: pointer;
+}
+
+.change.head {
+    margin-right: 6%;
+}
+
+#pairs {
+    position: absolute;
+    height: 355px;
+    overflow-y: scroll;
+    left: 0;
+    right: 0;
+    top: 45px;
+}
+
+.container.h400 {
+    height: 400px;
+}
+
+.container.default-orders {
+    background-color: #F7F7F7;
+    padding: 0;
+}
+
+.order-section {
+    float: left;
+    min-height: 150px;
+    border-right: 1px solid #DDDDDD;
+    flex: 1;
+    box-sizing: border-box;
+}
+
+.position-section {
+    flex: 1;
+    position: relative;
+}
+
+.shaurma-section {
+    flex: 1;
+    border-right: 1px solid #DDDDDD;
+}
+
+.shaurma, .coming-soon {
+    color: rgb(240, 185, 11);
+    font-size: 22px;
+    width: 100%;
+    text-align: center;
+    padding-top: 18%;
+}
+
+.coming-soon {
+    padding: 5px;
+    font-size: 14px;
+    color: #666666;
+}
+
+.order-section.last {
+    border-right: 0;
+}
+
+.buy-section, .sell-section {
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+.order-type {
+    user-select: none;
+    flex: 1;
+    float: left;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    border-right: 1px solid #DDDDDD;
+    border-bottom: 1px solid #DDDDDD;
+    background-color: #FFFFFF;
+}
+
+.order-type:hover {
+    cursor: pointer;
+    background-color: #F7F7F7;
+}
+
+.order-type.active {
+    color: rgb(240, 185, 11);
+    background-color: #F7F7F7;
+    border-bottom: 1px solid #F7F7F7;
+}
+
+.order-type.last {
+    border-right: 0;
+}
+
+.order-type-select {
+    line-height: 23px;
+    display: flex;
+}
+
+.section {
+    float: left;
+    min-height: 150px;
+    border-right: 1px solid #DDDDDD;
+    width: 15%;
+}
+
+.buy-btn, .sell-btn {
+    width: 100%;
+    float: left;
+    color: #FFFFFF;
+    padding: 5px;
+    box-sizing: border-box;
+    text-align: center;
+    border: 1px solid #DDDDDD;
+    font-size: 14px;
+}
+
+.buy-btn:hover, .sell-btn:hover {
+    cursor: pointer;
+    border: 1px solid #AAAAAA;
+}
+
+.sell-btn {
+    background-color: #EA0070;
+}
+
+.sell-btn:hover {
+    background-color: #d6006a;
+}
+
+.buy-btn {
+    background-color: #46c345;
+}
+
+.buy-btn:hover {
+    background-color: #3ea43d;
+}
+
+.buy-section > .row, .sell-section > .row {
+    line-height: 23px;
+}
+
+.input-name {
+    width: 25%;
+    float: left;
+    color: #666666;
+}
+
+input.price, input.amount {
+    width: 75%;
+    box-sizing: border-box;
+    float: right;
+    background-color: #FFFFFF;
+    border: 1px solid #E2E2E2;
+    padding: 0 0 0 5px;
+    line-height: inherit;
+}
+
+div.asset {
+    float: right;
+    width: 75%;
+    padding: 0 0 0 5px;
+    box-sizing: border-box;
+    line-height: inherit;
+}
+
+input.price:focus, input.amount:focus {
+    border: 1px solid rgb(240, 185, 11);
+    outline: none;
+}
+
+.input-currency {
+    position: absolute;
+    right: 15px;
+    top: 3px;
+    color: #666666;
+}
+
+.percent-amount {
+    float: left;
+    background-color: #FFFFFF;
+    border: 1px solid #E2E2E2;
+    box-sizing: border-box;
+    white-space: nowrap;
+    flex: 1;
+    text-align: center;
+    outline: none;
+    margin: 0 4px 0 0;
+    user-select: none;
+}
+
+.percent-amount.last {
+    margin: 0;
+}
+
+.percent-amount:hover, .market-button:hover {
+    color: rgb(240, 185, 11);
+    border: 1px solid rgb(240, 185, 11);
+    cursor: pointer;
+}
+
+.row.percents {
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 75%;
+    position: relative;
+    float: right;
+    width: 75%
+}
+
+.market-button {
+    float: right;
+    background-color: #FFFFFF;
+    border: 1px solid #E2E2E2;
+    box-sizing: border-box;
+    text-align: center;
+    user-select: none;
+    width: 75%
+}
+
+.balance-info {
+    display: flex;
+}
+
+.base-currency-info, .quote-currency-info {
+    flex: 1;
+    padding: 5px;
+}
+
+.row > .name {
+    float: left;
+}
+
+.row > .value {
+    float: right;
+}
+
+.value.percent {
+    margin: 0 5px;
+}
+
+.row.alerts {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    bottom: 5px;
+    margin: 0;
+}
+
+.alert {
+    position: relative;
+    flex: 1;
+    border: 1px solid #DDDDDD;
+    background-color: #FFFFFF;
+    padding: 4px;
+    text-align: center;
+    margin: 0 5px 0 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.alert.last {
+    margin: 0 5px;
+}
+
+.alert.red {
+    color: #EA0070;
+    border-color: #EA0070;
+}
+
+.alert.yellow {
+    color: rgb(240, 185, 11);
+    border-color: rgb(240, 185, 11);
+}
+
+.alert.red::before {
+    display: block;
+    position: absolute;
+    left: 5px;
+    top: 3px;
+    content: "!";
+    border-radius: 50%;
+    border: 1px solid #EA0070;
+    width: 14px;
+    height: 14px;
+    line-height: 15px;
+    text-align: center;
+    color: #EA0070;
+    font-weight: bold;
+}
+
+.alert.yellow::before {
+    display: block;
+    position: absolute;
+    left: 5px;
+    top: 3px;
+    content: "✓";
+    border-radius: 50%;
+    border: 1px solid rgb(240, 185, 11);
+    width: 14px;
+    height: 14px;
+    line-height: 15px;
+    text-align: center;
+    color: rgb(240, 185, 11);
+    font-weight: bold;
+}
+
+.container.active-orders {
+    background-color: #F7F7F7;
+}
+
+table.orders {
+    font-size: 12px;
+    width: 100%;
+}
+
+table.orders tr:first-child {
+    color: rgb(240, 185, 11);
+    font-weight: bold;
+    border-bottom: 1px solid #DDDDDD;
+}
+
+table.orders tr td {
+    padding: 0 5px;
+    border-right: 1px solid #DDDDDD;
+}
+
+table.orders tr td:last-child {
+    padding-right: 0;
+    border-right: 0;
+}
+table.orders tr td:first-child {
+    padding-left: 0;
+}
+
+.cancel-button {
+    border: 1px solid #DDDDDD;
+    background-color: #FFFFFF;
+    padding: 2px;
+    text-align: center;
+    margin: 1px 0;
+}
+
+canvas {
+    width: 100%;
+    height: 100%;
+}
+
+.description {
+    min-height: 16px;
+    color: #AAAAAA;
+    padding-left: 16px;
+    position: relative;
+}
+
+.description:before {
+    content: "?";
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 12px;
+    color: rgb(240, 185, 11);
+    font-weight: bold;
+    border: 1px solid rgb(240, 185, 11);
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    line-height: 13px;
+    text-align: center;
+}
