@@ -1,4 +1,4 @@
-# IN DEVELOPMENT, CURRENTLY NOT WORKING
+# [ABANDONED PROJECT]
 
 # BinanceTerminal
 Terminal for trading on [Binance.com](http://binance.com "Binance.com") exchange. Supports many kinds of custom orders.
